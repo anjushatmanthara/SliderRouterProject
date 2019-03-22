@@ -1,0 +1,219 @@
+body,
+html {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+}
+
+  .slider-container {
+    margin: 0 auto;
+    position: relative;
+    background: #4c4c4c;
+    height:422px;
+    border: solid 10px #00bcd4;
+    input {
+      display: none;
+    }
+
+    .slide_img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+
+      img {
+        width: calc(100% - 226px);
+        height: 422px;
+        
+        padding: 0px 0px 0px 111px;
+      }
+      #i1,
+      #i2,
+      #i3 {
+        display: none;
+      }
+
+      .prev,
+      .next {
+        width: 115px;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        background-color: blueviolet;
+        z-index: 99;
+        transition: 0.45s;
+        cursor: pointer;
+        text-align: center;
+      }
+      .next {
+        right: 0;
+      }
+      .prev {
+        left: 0;
+      }
+
+      .prev:hover,
+      .next:hover {
+        transition: 0.3s;
+        background-color: blueviolet;
+      }
+
+      .prev span,
+      .next span {
+        position: absolute;
+        width: 0px;
+        height: 0px;
+        border: solid 20px;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      .prev span {
+        border-color: transparent #fff transparent transparent;
+        right: 35%;
+      }
+      .next span {
+        border-color: transparent transparent transparent #fff;
+        left: 35%;
+      }
+    }
+
+    .nav {
+      width: 100%;
+      height: 11px;
+      bottom: 12px;
+      position: absolute;
+      text-align: center;
+      z-index: 99;
+
+      .dots {
+        top: -5px;
+        width: 18px;
+        height: 18px;
+        margin: 0 4px;
+        position: relative;
+        border-radius: 50%;
+        display: inline-block;
+        background-color: rgba(0, 0, 0, 0.6);
+        transition: 0.4s;
+        cursor: pointer;
+      }
+
+      #dot1:hover {
+        background: #795548;
+      }
+      #dot2:hover {
+        background: #f44336;
+      }
+      #dot3:hover {
+        background: #2196f3;
+      }
+      #dot4:hover {
+        background: #4caf50;
+      }
+    }
+  }
+
+  #i1:checked ~ #one,
+  #i2:checked ~ #two,
+  #i3:checked ~ #three,
+  #i4:checked ~ #four {
+    z-index: 9;
+    animation: scroll 1s ease-in-out;
+  }
+
+  #i1:checked ~ .nav #dot1,
+  #i2:checked ~ .nav #dot2,
+  #i3:checked ~ .nav #dot3,
+  #i4:checked ~ .nav #dot4 {
+    background: #fff;
+  }
+
+  @keyframes scroll {
+    0% {
+      opacity: 0.4;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @media screen and (max-width: 685px) {
+    .slider-container {
+      border: none;
+      width: 100%;
+      .slide_img {
+        .prev,
+        .next {
+          width: 15%;
+        }
+
+        .prev span,
+        .next span {
+          border: solid 12px;
+        }
+        .prev span {
+          border-color: transparent #fff transparent transparent;
+        }
+        .next span {
+          border-color: transparent transparent transparent #fff;
+        }
+      }
+    }
+  }
+
+  .button-container {
+    margin: 0 auto;
+    text-align: center;
+    height: 116px;
+
+    .button-wrapper {
+      display: inline-block;
+      min-width: 161px;
+      height: 32px;
+      margin-top: 33px;
+      margin-left: 15px;
+
+      .login {
+        width: 100%;
+        background-color: #4caf50;
+      }
+
+      .signup {
+        width: 100%;
+        background-color: #64afea;
+        color: white;
+      }
+
+      button {
+        height: 33px;
+        font-size: 18px;
+        text-align: center;
+        cursor: pointer;
+        outline: none;
+        color: #fff;
+        border: none;
+        border-radius: 8px;
+      }
+
+      #login:hover {
+        background-color: #3e8e41;
+      }
+      #signup:hover {
+        background-color: #2196f3;
+      }
+    }
+  }
+
+  .footer-container
+  {
+    height: calc(100% - 519px);
+    text-align: center;
+    background-color:#00bcd4;
+    
+    .footer-line
+    {
+      padding-top: 19px;
+    }
+  }

@@ -1,0 +1,13 @@
+/*
+*  outer-wrapper is the outermost container of the body.
+*  In the first page it will wrap the Slide container and button container.
+*  In the second page it will wrap the user details container.
+*/
+.outer-wrapper {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
